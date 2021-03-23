@@ -8,12 +8,18 @@ short_months = ['april', 'apr', 'june', 'jun', 'september', 'sep',
 
 # Get user input
 month = input('Enter a month: ').lower()
+days = None
 
+# Find number of days
 if month in ['feb', 'february']:
-    print(f'{month.title()} has 28 or 29 days.')
+    days = '28 or 29'
 elif month in long_months:
-    print(f'{month.title()} has 31 days.')
+    days = 31
 elif month in short_months:
-    print(f'{month.title()} has 30 days.')
+    days = 30
+
+# Output the result
+if days:
+    print(f'{month.title()} has {days} days.')
 else:
     print('You entered an invalid month!')
